@@ -31,7 +31,7 @@ export default class SearchForm extends React.Component {
         let fullName = `${result.data.givenname} ${result.data.middleinitial}. ${result.data.surname}`;
         self.setState({
             selectedName: fullName,
-            content: Object.keys(result.data).map((key) => [key, result.data[key]])
+            content: result.data
         });
     });
     this.setState({open: true})
@@ -57,8 +57,8 @@ export default class SearchForm extends React.Component {
     const tableData = this.state.results.map((record) => {
         return <tr key={record.Number}><td><a href="#" onClick={this.openModal.bind(null,record.Number)}>{record.surname + ', ' + record.givenname}</a></td></tr>
     });
-    const modalContent = this.state.content.map((row, index) => {
-        return <tr key={index}><th>{row[0]}</th><td>{row[1]}</td></tr>;
+    const modalContent = Object.keys(this.state.content).map((key, index) => {
+        return <tr key={index}><th>{key}</th><td>{this.state.content[key]}</td></tr>;
     });
     return (
         <div>
