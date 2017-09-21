@@ -54,7 +54,6 @@ export default class SearchForm extends React.Component {
   }
 
   render() {
-    let self = this;
     const tableData = this.state.results.map((record) => {
         return <tr key={record.Number}><td><a href="#" onClick={this.openModal.bind(null,record.Number)}>{record.surname + ', ' + record.givenname}</a></td></tr>
     });
