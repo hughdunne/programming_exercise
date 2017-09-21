@@ -7,8 +7,7 @@ import Col from 'react-bootstrap/lib/Col';
 import Modal from 'react-bootstrap/lib/Modal';
 import Button from 'react-bootstrap/lib/Button';
 
-//const API_SERVER = 'http://localhost:3000/';
-const API_SERVER = 'https://lit-mountain-36741.herokuapp.com/';
+const API_SERVER = 'http://localhost:3000/';
 export default class SearchForm extends React.Component {
   constructor() {
     super();
